@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MoveMetaCollection>
+  <Metas>
+    <Meta name ="Right Straight">
+      <FollowupAttack>Left Straight</FollowupAttack>
+      <FollowupAttack>Side Kick</FollowupAttack>
+    </Meta>
+    <Meta name ="Right Roundhouse"></Meta>
+    <Meta name ="Uppercut"></Meta>
+    <Meta name ="Side kick"></Meta>
+    <Meta name="Knockdown Left"></Meta>
+    <Meta name="Left Straight"></Meta>
+  </Metas>
+</MoveMetaCollection>

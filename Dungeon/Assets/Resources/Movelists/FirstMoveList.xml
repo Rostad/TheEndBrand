@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MoveCollection>
+  <Moves>
+    <Move name ="Right Straight">
+      <Button>Punch</Button>
+      <Input>Neutral</Input>
+      <Damage>20</Damage>
+    </Move>
+    <Move name ="Left Straight">
+      <Button>Punch</Button>
+      <Input>Neutral</Input>
+      <Damage>15</Damage>
+    </Move>
+    <Move name ="Right Roundhouse">
+      <Button>Kick</Button>
+      <Input>Neutral</Input>
+      <Damage>30</Damage>
+    </Move>
+    <Move name ="Uppercut">
+      <Button>Punch</Button>
+      <Input>Back</Input>
+      <Damage>25</Damage>
+    </Move>
+    <Move name ="Side kick">
+      <Button>Kick</Button>
+      <Input>Neutral</Input>
+      <Damage>20</Damage>
+    </Move>
+    <Move name ="Knockdown Left">
+      <Button>Punch</Button>
+      <Input>Forward</Input>
+      <Damage>35</Damage>
+    </Move>
+  </Moves>  
+</MoveCollection>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MoveMetaCollection>
+  <Metas>
+    <Meta name ="Crashing Slash">
+      <FollowupAttack>Reverse Rising Slash</FollowupAttack>
+    </Meta>
+    
+    <Meta name ="Crashing Chop"></Meta>
+    <!--
+    <Meta name ="Horizontal Slash"></Meta>
+    -->
+    <Meta name ="Side Kick"></Meta>
+    <Meta name="Rising Slash"></Meta>
+    <Meta name="Reverse Rising Slash"></Meta>
+  </Metas>
+</MoveMetaCollection>
