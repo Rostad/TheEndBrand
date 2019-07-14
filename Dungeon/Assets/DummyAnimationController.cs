@@ -9,6 +9,8 @@ public class DummyAnimationController : MonoBehaviour
     private bool _wasRunning;
     private bool _isRolling;
     private GameObject _Player;
+    private AnimationClip[] _Clips;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,7 @@ public class DummyAnimationController : MonoBehaviour
         _wasRunning = false;
         _isRolling = false;
         _Player = GameObject.Find("Player");
+        _Clips = _Animator.runtimeAnimatorController.animationClips;
         
     }
 
@@ -61,6 +64,17 @@ public class DummyAnimationController : MonoBehaviour
     public float GetAnimationLength()
     {
         return _Animator.GetCurrentAnimatorStateInfo(0).length;
+    }
+
+    public float GetAnimationClipLength(string name)
+    {
+        foreach(AnimationClip c in _Clips)
+        {
+            if (c.name.Equals(name))
+                return c.length;
+        }
+
+        return 0f;
     }
 
     public bool GetAnimationName()

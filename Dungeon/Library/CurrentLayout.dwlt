@@ -112,10 +112,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 713, y: 498}
+  m_MinSize: {x: 711, y: 498}
   m_MaxSize: {x: 18008, y: 14048}
   vertical: 0
-  controlID: 62
+  controlID: 82
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -137,10 +137,10 @@ MonoBehaviour:
     y: 0
     width: 945
     height: 947
-  m_MinSize: {x: 202, y: 348}
-  m_MaxSize: {x: 4002, y: 8048}
+  m_MinSize: {x: 200, y: 324}
+  m_MaxSize: {x: 4002, y: 8024}
   vertical: 1
-  controlID: 63
+  controlID: 30
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -770,7 +770,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 0c0c0000
       m_LastClickedID: 0
       m_ExpandedIDs: d2fbffff
       m_RenameOverlay:
@@ -840,11 +840,11 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Resources/Attack Animations
   m_LastFoldersGridSize: 16
-  m_LastProjectPath: D:\Backup\3rd person fighter\GamePrototype\Dungeon
+  m_LastProjectPath: D:\Game Projects\3rd person fighter\TheEndBrand\Dungeon
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 3}
     m_SelectedIDs: 34110000
     m_LastClickedID: 4404
     m_ExpandedIDs: 00000000540c0000ae0c0000240d0000800d00005e0e0000820f0000e20f000018100000a6110000ee1200006c3500006e350000703500007235000074350000763500007835000000ca9a3b
@@ -902,22 +902,22 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: e0230000d423000022120000c20b0000aa280000d8280000742a000072300000de290000c22e00002e290000da2a0000182c00009a0f0000860f000014100000dc0c0000ae0c0000da0d00004e0c00009610000030100000a20b00005410000088680000cc65000054600000f80a0000cc0d0000da0f0000cc0b0000e60b00004a0f0000000d0000e00d0000f20c0000a80f0000dc0f0000100b0000020d0000de0f0000520e0000380f0000620e00007c0c00004c0f0000640e00003a0f00000a0d00000000000012130000a6110000de1200001c0d00008c0d0000c6120000f80b00001c0c0000d8110000
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: e0230000d423000022120000c20b0000aa280000d8280000742a000072300000de290000c22e00002e290000da2a0000182c00009a0f0000860f000014100000dc0c0000ae0c0000da0d00004e0c00009610000030100000a20b00005410000088680000cc65000054600000f80a0000cc0d0000da0f0000cc0b0000e60b00004a0f0000000d0000e00d0000f20c0000a80f0000dc0f0000100b0000020d0000de0f0000520e0000380f0000620e00007c0c00004c0f0000640e00003a0f00000a0d00000000000012130000a6110000de1200001c0d00008c0d0000c6120000d81100001c0c0000040c0000140c0000f00b0000f80b00000c0c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: DummyAnimationController
+      m_OriginalName: DummyAnimationController
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 1652
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:

@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
     IEnumerator ChangeToAttackState(Attack a)
     {
         yield return new WaitForEndOfFrame();
-        SwitchActionState(new AttackState(this, a, _DummyAnim.GetAnimationLength()));
+        SwitchActionState(new AttackState(this, a, _DummyAnim.GetAnimationClipLength(a.name)));
     }
 
 

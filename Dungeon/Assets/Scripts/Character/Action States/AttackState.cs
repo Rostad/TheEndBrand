@@ -42,7 +42,7 @@ public class AttackState : IActionState
     {
         _Player = p;
         _CurrentAttack = a;
-        _Duration = 0.81f; //Currently works as all attack animations are about the same length, need to figure out how to use crossfades without getting different animation time length
+        _Duration = time * 0.8f; //Currently works as all attack animations are about the same length, need to figure out how to use crossfades without getting different animation time length
         _Timer = 0f;
         Debug.Log(_Duration);
     }
