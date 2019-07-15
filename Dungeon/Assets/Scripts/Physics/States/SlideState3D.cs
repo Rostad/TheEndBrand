@@ -27,7 +27,7 @@ public struct SlideState3D : ICharacterState3D
 
     public void Exit()
     {
-        throw new NotImplementedException();
+
     }
 
     public CharacterStateSwitch3D HandleCollisions(CollisionFlags collisionFlags)
