@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponHitbox : MonoBehaviour
+public class Hitbox : MonoBehaviour
 {
 
     private bool _Enabled;
@@ -18,28 +18,23 @@ public class WeaponHitbox : MonoBehaviour
         _Player = GetComponentInParent<Player>();
         
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void SetAttackData(int damage, AttackEffect effect, AttackEffect counterEffect)
     {
         _AttackData = new AttackData(damage, effect, counterEffect);
-        _Enabled = true;
         _TargetsHit.Clear();
     }
 
     public void DisableHitbox()
     {
         _Enabled = false;
+    }
+
+    public void EnableHitBox()
+    {
+        _Enabled = true;
     }
 
     public void OnTriggerEnter(Collider other)

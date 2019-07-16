@@ -15,7 +15,7 @@ public class Player : MonoBehaviour, IDamagable
     private Movelist _MoveList;
     private Stats _Stats;
     private IResource _Resource;
-    private WeaponHitbox _Weapon;
+    private Hitbox _Weapon;
 
     // Start is called before the first frame update
     void Start()
@@ -92,7 +92,7 @@ public class Player : MonoBehaviour, IDamagable
         _Buffer.Initialize();
         _DummyAnim = GetComponentInChildren<DummyAnimationController>();
         _MoveList = Movelist.BuildMoveList(moveListPath, moveMetaListPath);
-        _Weapon = GetComponentInChildren<WeaponHitbox>();
+        _Weapon = GetComponentInChildren<Hitbox>();
     }
 
     public void SwitchActionState(IActionState state)

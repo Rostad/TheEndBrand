@@ -13,7 +13,7 @@
       <Input>Forward</Input>
       <Effect>Knockdown</Effect>
       <Counter>Knockdown</Counter>
-      <Damage>20</Damage>
+      <Damage>40</Damage>
     </Move>
     <Move name ="Rising Slash">
       <Button>Punch</Button>
