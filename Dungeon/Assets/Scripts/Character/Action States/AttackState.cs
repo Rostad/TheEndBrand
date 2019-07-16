@@ -15,10 +15,12 @@ public class AttackState : IActionState
     public void Enter()
     {
         _Player.CanMove(false);
+        _Player.SetWeaponAttack(_CurrentAttack);
     }
 
     public void Exit()
     {
+        _Player.DisableWeaponHitbox();
         if (_NextAttack == null)
         {
             _Player.ClearBuffer();

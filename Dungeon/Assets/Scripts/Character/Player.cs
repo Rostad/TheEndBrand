@@ -15,6 +15,7 @@ public class Player : MonoBehaviour, IDamagable
     private Movelist _MoveList;
     private Stats _Stats;
     private IResource _Resource;
+    private WeaponHitbox _Weapon;
 
     // Start is called before the first frame update
     void Start()
@@ -91,6 +92,7 @@ public class Player : MonoBehaviour, IDamagable
         _Buffer.Initialize();
         _DummyAnim = GetComponentInChildren<DummyAnimationController>();
         _MoveList = Movelist.BuildMoveList(moveListPath, moveMetaListPath);
+        _Weapon = GetComponentInChildren<WeaponHitbox>();
     }
 
     public void SwitchActionState(IActionState state)
@@ -126,6 +128,16 @@ public class Player : MonoBehaviour, IDamagable
         _Controller.canMove = canmove;
     }
 
+    public void DisableWeaponHitbox()
+    {
+        _Weapon.DisableHitbox();
+    }
+
+    public void SetWeaponAttack(Attack attack)
+    {
+        _Weapon.SetAttackData(attack.damage, attack.attackEffect, attack.counterEffect);
+    }
+
     public HitData DoDamage(AttackData attack)
     {
         throw new System.NotImplementedException();
@@ -133,6 +145,6 @@ public class Player : MonoBehaviour, IDamagable
 
     public void OnHit(HitData hitData)
     {
-
+        Debug.Log(hitData.targetHit + " " + hitData.damage);
     }
 }

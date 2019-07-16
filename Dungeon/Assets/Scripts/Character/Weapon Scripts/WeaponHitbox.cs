@@ -16,6 +16,7 @@ public class WeaponHitbox : MonoBehaviour
         _Enabled = false;
         _TargetsHit = new List<IDamagable>();
         _Player = GetComponentInParent<Player>();
+        
     }
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,7 @@ public class WeaponHitbox : MonoBehaviour
     {
         _AttackData = new AttackData(damage, effect, counterEffect);
         _Enabled = true;
+        _TargetsHit.Clear();
     }
 
     public void DisableHitbox()
@@ -47,7 +49,7 @@ public class WeaponHitbox : MonoBehaviour
         if (_AttackData == null)
             throw new MissingReferenceException("Weapon hit a target without any attack data");
 
-        if (other.CompareTag("Damagable"))
+        if (other.tag == "Damagable")
         {
             IDamagable target = other.GetComponent<IDamagable>();
             if (target == null)
