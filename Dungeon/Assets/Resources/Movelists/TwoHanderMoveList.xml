@@ -11,26 +11,36 @@
     <Move name ="Crashing Chop">
       <Button>Punch</Button>
       <Input>Forward</Input>
+      <Effect>Knockdown</Effect>
+      <Counter>Knockdown</Counter>
       <Damage>20</Damage>
     </Move>
     <Move name ="Rising Slash">
       <Button>Punch</Button>
+      <Effect>Knockup</Effect>
+      <Counter>Knockup</Counter>
       <Input>Back</Input>
       <Damage>30</Damage>
     </Move>
     <Move name ="Side Kick">
       <Button>Kick</Button>
       <Input>Neutral</Input>
+      <Effect>None</Effect>
+      <Counter>Stun</Counter>
       <Damage>20</Damage>
     </Move>
     <Move name ="Crashing Slash">
       <Button>Punch</Button>
       <Input>Neutral</Input>
+      <Effect>None</Effect>
+      <Counter>None</Counter>
       <Damage>20</Damage>
     </Move>
     <Move name ="Reverse Rising Slash">
       <Button>Punch</Button>
       <Input>Neutral</Input>
+      <Effect>Knockback</Effect>
+      <Effect>Knockback</Effect>
       <Damage>20</Damage>
     </Move>
   </Moves>  

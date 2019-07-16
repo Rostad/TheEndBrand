@@ -5,7 +5,6 @@ using UnityEngine;
 public enum AttackEffect
 {
    Knockback,
-   Wall_bounce,
    Stun,
    Knockdown,
    Knockup,

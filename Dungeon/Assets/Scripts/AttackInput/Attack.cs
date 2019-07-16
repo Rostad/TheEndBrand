@@ -15,6 +15,12 @@ public class Attack {
     [XmlElement("Input")]
     public InputDirection inputDir;
 
+    [XmlElement("Effect")]
+    public AttackEffect attackEffect;
+
+    [XmlElement("Counter")]
+    public AttackEffect counterEffect;
+
     [XmlElement("Damage")]
     public int damage;
 

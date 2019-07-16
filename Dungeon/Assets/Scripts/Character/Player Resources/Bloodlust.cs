@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bloodlust : MonoBehaviour
+public class Bloodlust : MonoBehaviour, IResource
 {
 
     private int _CurrentBloodlust;
@@ -44,5 +44,15 @@ public class Bloodlust : MonoBehaviour
     private int CalculateBloodlustGain(int damage)
     {
         return damage / 10;
+    }
+
+    public bool UseResource(int amount)
+    {
+        return UseBloodlust(amount);
+    }
+
+    public void AddResource(int amount)
+    {
+        AddBloodLust(amount);
     }
 }

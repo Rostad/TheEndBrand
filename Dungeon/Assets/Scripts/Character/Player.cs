@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDamagable
 {
 
     public string moveListPath;
@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     private DummyAnimationController _DummyAnim;
     private Movelist _MoveList;
     private Stats _Stats;
+    private IResource _Resource;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,11 @@ public class Player : MonoBehaviour
     {
         AddInput();
         _ActionState.Update();
+        TryAttack();
+    }
 
+    private void TryAttack()
+    {
         if (_ActionState is AttackState)
         {
             if (!_Buffer.IsEmpty())
@@ -43,7 +48,7 @@ public class Player : MonoBehaviour
                 Attack attack = _MoveList.GetAttack(input);
                 DoAttack(attack);
             }
-            
+
         }
     }
 
@@ -100,11 +105,6 @@ public class Player : MonoBehaviour
         _ActionState = new NormalState();
     }
 
-    public void SetRotationSpeed(float f)
-    {
-        _Controller.RotationSpeed = f;
-    }
-
     private void AddInput()
     {
         var v = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
@@ -124,5 +124,15 @@ public class Player : MonoBehaviour
     public void CanMove(bool canmove)
     {
         _Controller.canMove = canmove;
+    }
+
+    public HitData DoDamage(AttackData attack)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnHit(HitData hitData)
+    {
+
     }
 }

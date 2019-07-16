@@ -19,7 +19,6 @@ public class AttackState : IActionState
 
     public void Exit()
     {
-
         if (_NextAttack == null)
         {
             _Player.ClearBuffer();
