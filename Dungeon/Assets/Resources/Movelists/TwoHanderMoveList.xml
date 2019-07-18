@@ -13,14 +13,14 @@
       <Input>Forward</Input>
       <Effect>Knockdown</Effect>
       <Counter>Knockdown</Counter>
-      <Damage>40</Damage>
+      <Damage>25</Damage>
     </Move>
     <Move name ="Rising Slash">
       <Button>Punch</Button>
       <Effect>Knockup</Effect>
       <Counter>Knockup</Counter>
       <Input>Back</Input>
-      <Damage>30</Damage>
+      <Damage>17</Damage>
     </Move>
     <Move name ="Side Kick">
       <Button>Kick</Button>

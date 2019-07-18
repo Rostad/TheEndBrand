@@ -1,0 +1,28 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class AnimationMove : MonoBehaviour
+{
+
+    private CharacterController _Controller;
+    private Animator _Anim;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        _Controller = GetComponentInParent<CharacterController>();
+        _Anim = GetComponent<Animator>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    private void OnAnimatorMove()
+    {
+        _Controller.Move(_Anim.deltaPosition);
+    }
+}

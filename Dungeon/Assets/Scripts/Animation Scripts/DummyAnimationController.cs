@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DummyAnimationController : MonoBehaviour
 {
+    public Animator playerAnim;
+
     private Velocity3D _Velocity;
     private Animator _Animator;
     private bool _wasRunning;
@@ -63,6 +65,12 @@ public class DummyAnimationController : MonoBehaviour
         //_Animator.Play(name, 0);
         _Animator.CrossFadeInFixedTime(name, 0.2f);
     }
+
+    public void PlayChop()
+    {
+        playerAnim.SetTrigger("Chop Trigger");
+    }
+
     //Called in the IEnumerator ChangeToAttackState when switching to an attack state. The float returned specifies the length of the attack animation and determines how long the attack state lasts.
     public float GetAnimationClipLength(string name)
     {
