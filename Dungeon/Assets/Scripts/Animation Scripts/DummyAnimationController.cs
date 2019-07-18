@@ -54,7 +54,7 @@ public class DummyAnimationController : MonoBehaviour
         Vector3 velocity = _Velocity.GetVelocity();
         velocity.y = 0f;
         velocity = transform.TransformVector(velocity);
-        Vector3 dir = Vector3.RotateTowards(this.transform.forward, velocity, 360f, 0.0f);
+        Vector3 dir = Vector3.RotateTowards(transform.InverseTransformDirection(this.transform.forward), velocity, 360f, 0.0f);
         transform.rotation = Quaternion.LookRotation(dir);
         //_Animator.SetTrigger("Roll trigger");
         _Animator.CrossFade("Forward Roll", 0.3f);
@@ -101,7 +101,7 @@ public class DummyAnimationController : MonoBehaviour
     //Called when the player exits the DodgeState3D or has stopped running, resets the player objects rotation to face forward.
     public void ResetRotation()
     {
-        Vector3 dir = Vector3.RotateTowards(transform.forward, transform.parent.transform.forward, 360f, 0.0f);
+        Vector3 dir = Vector3.RotateTowards(transform.InverseTransformDirection(transform.forward), transform.parent.transform.forward, 360f, 0.0f);
         transform.rotation = Quaternion.LookRotation(dir);
         _wasRunning = false;
         _isRolling = false;
