@@ -106,4 +106,14 @@ public class DummyAnimationController : MonoBehaviour
         _wasRunning = false;
         _isRolling = false;
     }
+
+    public void DisableRootMotion()
+    {
+        _Animator.applyRootMotion = false;
+    }
+
+    public void EnableRootMotion()
+    {
+        _Animator.applyRootMotion = true;
+    }
 }

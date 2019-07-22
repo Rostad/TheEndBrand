@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dce280ced5e006c4cb0eb0fab2f51b75
+guid: 173e178c94d37a94ba9a9552f6059dac
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
@@ -317,9 +317,12 @@ ModelImporter:
     second: RPG-Character-Mesh
   - first:
       1: 100208
-    second: 2Hand-Sword
+    second: Crossbow
   - first:
       1: 100210
+    second: 2Hand-Sword
+  - first:
+      1: 100212
     second: Exporter
   - first:
       4: 400000
@@ -635,9 +638,12 @@ ModelImporter:
     second: RPG-Character-Mesh
   - first:
       4: 400208
-    second: 2Hand-Sword
+    second: Crossbow
   - first:
       4: 400210
+    second: 2Hand-Sword
+  - first:
+      4: 400212
     second: Exporter
   - first:
       23: 2300000
@@ -656,6 +662,9 @@ ModelImporter:
     second: USP
   - first:
       23: 2300010
+    second: Crossbow
+  - first:
+      23: 2300012
     second: 2Hand-Sword
   - first:
       33: 3300000
@@ -674,6 +683,9 @@ ModelImporter:
     second: USP
   - first:
       33: 3300010
+    second: Crossbow
+  - first:
+      33: 3300012
     second: 2Hand-Sword
   - first:
       43: 4300000
@@ -698,10 +710,13 @@ ModelImporter:
     second: RPG-Character-Mesh
   - first:
       43: 4300014
+    second: Crossbow
+  - first:
+      43: 4300016
     second: 2Hand-Sword
   - first:
       74: 7400000
-    second: Crashing Chop
+    second: 2Hand-Sword-Strafe-Backward-Left
   - first:
       95: 9500000
     second: //RootNode
@@ -748,19 +763,19 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Crashing Chop
+      name: 2Hand-Sword-Strafe-Backward-Left
       takeName: Take 001
       internalID: 7400000
       firstFrame: 0
-      lastFrame: 36
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 0
@@ -772,11 +787,17 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.3403058
-        functionName: EnableHitbox
-        data: Sword
-        objectReferenceParameter: {fileID: 11500000, guid: f88e3ebbb4a6d3a4e8c1f10ce0b66547,
-          type: 3}
+      - time: 0
+        functionName: FootR
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.5119285
+        functionName: FootL
+        data: 
+        objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

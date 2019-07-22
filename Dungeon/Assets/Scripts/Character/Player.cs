@@ -20,7 +20,7 @@ public class Player : MonoBehaviour, IDamagable
     // Start is called before the first frame update
     void Start()
     {
-        
+        _DummyAnim.DisableRootMotion();
     }
 
     // Update is called once per frame
@@ -76,6 +76,7 @@ public class Player : MonoBehaviour, IDamagable
     {
         yield return new WaitForEndOfFrame();
         SwitchActionState(new AttackState(this, a, _DummyAnim.GetAnimationClipLength(a.name)));
+        _DummyAnim.EnableRootMotion();
     }
 
 
@@ -131,6 +132,11 @@ public class Player : MonoBehaviour, IDamagable
     public void DisableWeaponHitbox()
     {
         _Weapon.DisableHitbox();
+    }
+
+    public void DisableRootMotion()
+    {
+        _DummyAnim.DisableRootMotion();
     }
 
     public void SetWeaponAttack(Attack attack)

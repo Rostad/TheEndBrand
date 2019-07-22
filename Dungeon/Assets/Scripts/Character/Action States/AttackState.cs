@@ -25,6 +25,7 @@ public class AttackState : IActionState
         {
             _Player.ClearBuffer();
             _Player.CanMove(true);
+            _Player.DisableRootMotion();
         }
     }
 

@@ -1166,12 +1166,12 @@ PrefabInstance:
     - target: {fileID: 2020081184756036608, guid: c0341c96ca1e1ae4bb5bee03d51126d4,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000009016087
+      value: 0.000000023977524
       objectReference: {fileID: 0}
     - target: {fileID: 2020081184756036608, guid: c0341c96ca1e1ae4bb5bee03d51126d4,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000020345006
+      value: 0.00000003012559
       objectReference: {fileID: 0}
     - target: {fileID: 2020081184756036608, guid: c0341c96ca1e1ae4bb5bee03d51126d4,
         type: 3}
@@ -1186,12 +1186,12 @@ PrefabInstance:
     - target: {fileID: 2020081183689897000, guid: c0341c96ca1e1ae4bb5bee03d51126d4,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000047396
+      value: -0.0000000145830645
       objectReference: {fileID: 0}
     - target: {fileID: 2020081183689897000, guid: c0341c96ca1e1ae4bb5bee03d51126d4,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000010323706
+      value: -0.00000009286644
       objectReference: {fileID: 0}
     - target: {fileID: 2020081183689897000, guid: c0341c96ca1e1ae4bb5bee03d51126d4,
         type: 3}
@@ -1208,9 +1208,44 @@ PrefabInstance:
       propertyPath: m_XDamping
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2020081183117665971, guid: c0341c96ca1e1ae4bb5bee03d51126d4,
+        type: 3}
+      propertyPath: m_ZDamping
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2020081184617703745, guid: c0341c96ca1e1ae4bb5bee03d51126d4,
         type: 3}
       propertyPath: m_XDamping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020081184617703745, guid: c0341c96ca1e1ae4bb5bee03d51126d4,
+        type: 3}
+      propertyPath: m_ZDamping
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020081183117665970, guid: c0341c96ca1e1ae4bb5bee03d51126d4,
+        type: 3}
+      propertyPath: m_DeadZoneWidth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020081184210894588, guid: c0341c96ca1e1ae4bb5bee03d51126d4,
+        type: 3}
+      propertyPath: m_ZDamping
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020081184210894588, guid: c0341c96ca1e1ae4bb5bee03d51126d4,
+        type: 3}
+      propertyPath: m_XDamping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020081184210894579, guid: c0341c96ca1e1ae4bb5bee03d51126d4,
+        type: 3}
+      propertyPath: m_DeadZoneWidth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020081184617703744, guid: c0341c96ca1e1ae4bb5bee03d51126d4,
+        type: 3}
+      propertyPath: m_DeadZoneWidth
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1290,12 +1325,12 @@ PrefabInstance:
     - target: {fileID: 6026553844908702256, guid: afee2fb07d5d9614d940e29dd63a7241,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000032812935
+      value: 0.000000032812935
       objectReference: {fileID: 0}
     - target: {fileID: 6026553844908702256, guid: afee2fb07d5d9614d940e29dd63a7241,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000001037062
+      value: 0.00000001037062
       objectReference: {fileID: 0}
     - target: {fileID: 6026553844908702256, guid: afee2fb07d5d9614d940e29dd63a7241,
         type: 3}
