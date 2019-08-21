@@ -46,7 +46,6 @@ public class AttackState : IActionState
         _CurrentAttack = a;
         _Duration = time * 0.8f; //Currently works as all attack animations are about the same length, need to figure out how to use crossfades without getting different animation time length
         _Timer = 0f;
-        Debug.Log(_Duration);
     }
 
     public void TrySetFollowup(AttackInput input)

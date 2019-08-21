@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mana : MonoBehaviour, IResource
+public class Mana : MonoBehaviour
 {
     private int _CurrentMana;
     private int _MaxMana;
@@ -29,16 +29,6 @@ public class Mana : MonoBehaviour, IResource
     public void RestoreMana()
     {
         AddMana(_MaxMana);
-    }
-
-    public void AddResource(int amount)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public bool UseResource(int amount)
-    {
-        throw new System.NotImplementedException();
     }
 
 

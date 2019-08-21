@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour, IDamagable
+public class Player : MonoBehaviour, IDamagable, ITargetable
 {
 
     public string moveListPath;
@@ -14,13 +14,16 @@ public class Player : MonoBehaviour, IDamagable
     private DummyAnimationController _DummyAnim;
     private Movelist _MoveList;
     private Stats _Stats;
-    private IResource _Resource;
+    private Health _Health;
+    private Mana _Mana;
     private Hitbox _Weapon;
+    private List<StatusEffect> _StatusEffects;
 
     // Start is called before the first frame update
     void Start()
     {
         _DummyAnim.DisableRootMotion();
+        _StatusEffects = new List<StatusEffect>();
     }
 
     // Update is called once per frame
@@ -29,6 +32,8 @@ public class Player : MonoBehaviour, IDamagable
         AddInput();
         _ActionState.Update();
         TryAttack();
+
+        UpdateStatusEffects();
     }
 
     private void TryAttack()
@@ -69,6 +74,14 @@ public class Player : MonoBehaviour, IDamagable
             {
                 DoAttack(nextattack);
             }
+        }
+    }
+
+    private void UpdateStatusEffects()
+    {
+        foreach (StatusEffect e in _StatusEffects)
+        {
+            e.Update(this);
         }
     }
 
@@ -152,5 +165,20 @@ public class Player : MonoBehaviour, IDamagable
     public void OnHit(HitData hitData)
     {
         Debug.Log(hitData.targetHit + " " + hitData.damage);
+    }
+
+    public bool ApplyStatus(StatusEffect effect)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public Health GetHealth()
+    {
+        return _Health;
+    }
+
+    public Mana GetMana()
+    {
+        return _Mana;
     }
 }

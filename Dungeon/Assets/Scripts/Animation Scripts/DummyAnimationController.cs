@@ -43,6 +43,12 @@ public class DummyAnimationController : MonoBehaviour
         {
             ResetRotation();
         }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            _Animator.ResetTrigger("Cast trigger");
+            _Animator.SetTrigger("Cast trigger");
+        }
     }
 
     //Called in the Update method in DodgeState3D, rotates the player object in the direction of the dodge and plays a roll animation
@@ -64,11 +70,6 @@ public class DummyAnimationController : MonoBehaviour
     {
         //_Animator.Play(name, 0);
         _Animator.CrossFadeInFixedTime(name, 0.2f);
-    }
-
-    public void PlayChop()
-    {
-        playerAnim.SetTrigger("Chop Trigger");
     }
 
     //Called in the IEnumerator ChangeToAttackState when switching to an attack state. The float returned specifies the length of the attack animation and determines how long the attack state lasts.
