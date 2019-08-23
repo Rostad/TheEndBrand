@@ -7,8 +7,12 @@ public interface ITargetable
 
     bool ApplyStatus(StatusEffect effect);
 
-    Health GetHealth();
+    float DoDamage(int amount);
 
-    Mana GetMana();
+    float DoHeal(int amount);
+
+    float DoManaDamage(int amount);
+
+    float DoManaRestore(int amount);
 
 }

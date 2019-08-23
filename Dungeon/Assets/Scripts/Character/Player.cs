@@ -81,7 +81,7 @@ public class Player : MonoBehaviour, IDamagable, ITargetable
     {
         foreach (StatusEffect e in _StatusEffects)
         {
-            e.Update(this);
+            e.Update();
         }
     }
 
@@ -172,13 +172,23 @@ public class Player : MonoBehaviour, IDamagable, ITargetable
         throw new System.NotImplementedException();
     }
 
-    public Health GetHealth()
+    public float DoDamage(int amount)
     {
-        return _Health;
+        throw new System.NotImplementedException();
     }
 
-    public Mana GetMana()
+    public float DoHeal(int amount)
     {
-        return _Mana;
+        throw new System.NotImplementedException();
+    }
+
+    public float DoManaDamage(int amount)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public float DoManaRestore(int amount)
+    {
+        throw new System.NotImplementedException();
     }
 }

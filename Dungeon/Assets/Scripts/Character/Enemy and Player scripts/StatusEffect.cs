@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StatusEffect
+public abstract class StatusEffect
 {
-    public void Update(ITargetable affected)
-    {
 
-    }
+    private ITargetable affected;
+
+    public abstract void Update();
+    public abstract void OnApply();
+    public abstract void OnRemove();
 }

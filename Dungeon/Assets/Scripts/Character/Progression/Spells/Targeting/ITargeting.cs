@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ITargeting
+public abstract class ITargeting : ScriptableObject
 {
 
-    List<ITargetable> GetTargets(GameObject source);
+    public abstract List<ITargetable> GetTargets(GameObject source);
 
 }
