@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Effects/Heal")]
 public class Heal : Effect
 {
-    public override void Apply(ITargetable target, int power)
+    public override void Apply(ITargetable target)
     {
         target.DoHeal(power);
     }

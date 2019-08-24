@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff3a5cdcab3b22a4d9e06ea2270d1c17, type: 3}
   m_Name: Greater Heal
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Greater Heal
   Icon: {fileID: 0}
   audioClip: {fileID: 0}
   coolDown: 5
@@ -21,4 +21,7 @@ MonoBehaviour:
   basePower: 150
   scaling: 0
   effect: {fileID: 11400000, guid: 2831776bf70addf44a34db39cc393d73, type: 2}
+  source: {fileID: 0}
+  castParticles: Heal Effect
+  channelParticles: Casting Effect
   targetingSystem: {fileID: 11400000, guid: 62c758881ed2c7a42aa05600cd311d26, type: 2}

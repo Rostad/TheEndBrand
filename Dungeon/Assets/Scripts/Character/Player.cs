@@ -7,6 +7,7 @@ public class Player : MonoBehaviour, IDamagable, ITargetable
 
     public string moveListPath;
     public string moveMetaListPath;
+    public Spell[] spells;
 
     private Controller3D _Controller;
     private InputBuffer _Buffer;
@@ -18,22 +19,28 @@ public class Player : MonoBehaviour, IDamagable, ITargetable
     private Mana _Mana;
     private Hitbox _Weapon;
     private List<StatusEffect> _StatusEffects;
+    private ParticleDriver particleDriver;
 
     // Start is called before the first frame update
     void Start()
     {
         _DummyAnim.DisableRootMotion();
         _StatusEffects = new List<StatusEffect>();
+        particleDriver = GetComponent<ParticleDriver>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
         AddInput();
         _ActionState.Update();
         TryAttack();
-
         UpdateStatusEffects();
+        if (Input.GetKeyDown(KeyCode.H) && _ActionState is NormalState)
+        {
+            SwitchActionState(new CastState(this, spells[1]));
+        }
     }
 
     private void TryAttack()
@@ -169,7 +176,9 @@ public class Player : MonoBehaviour, IDamagable, ITargetable
 
     public bool ApplyStatus(StatusEffect effect)
     {
-        throw new System.NotImplementedException();
+        effect.OnApply();
+        _StatusEffects.Add(effect);
+        return true;
     }
 
     public float DoDamage(int amount)
@@ -190,5 +199,15 @@ public class Player : MonoBehaviour, IDamagable, ITargetable
     public float DoManaRestore(int amount)
     {
         throw new System.NotImplementedException();
+    }
+
+    public void PlayParticles(string name)
+    {
+        particleDriver.PlayParticles(name);
+    }
+
+    public void StopParticles(string name)
+    {
+        particleDriver.StopParticles(name);
     }
 }

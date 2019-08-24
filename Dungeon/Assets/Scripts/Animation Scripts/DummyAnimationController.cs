@@ -51,9 +51,7 @@ public class DummyAnimationController : MonoBehaviour
         }
     }
 
-    //Called in the Update method in DodgeState3D, rotates the player object in the direction of the dodge and plays a roll animation
-    //Current issues:
-    //When doing a backwards roll the player object is not rotated correctly
+
     public void PlayRoll()
     {
         _isRolling = true;

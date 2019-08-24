@@ -13,6 +13,9 @@ public abstract class Spell : ScriptableObject
     public int basePower;
     public float scaling;
     public Effect effect;
+    public GameObject source;
+    public string castParticles; //Name of particle system to play when spell finishes casting
+    public string channelParticles; //Name of particle system to play when spell is casting
 
     public abstract void Initialize(GameObject obj);
     public abstract void TriggerAbility();

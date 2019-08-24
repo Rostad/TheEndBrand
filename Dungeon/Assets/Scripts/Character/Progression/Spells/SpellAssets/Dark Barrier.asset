@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c91ae03d1c02a94783e8272c1503486, type: 3}
+  m_Name: Dark Barrier
+  m_EditorClassIdentifier: 
+  Name: 
+  Icon: {fileID: 0}
+  audioClip: {fileID: 0}
+  coolDown: 15
+  tooltip: 
+  manaCost: 40
+  basePower: 12
+  scaling: 0
+  effect: {fileID: 11400000, guid: c30566ab1908fc94fa73373aa5b23564, type: 2}
+  source: {fileID: 0}
+  castParticles: 
+  channelParticles: 
+  spellPrefab: {fileID: 6360707525400879562, guid: ac8655a4361add841bf88c2835ef5bc5,
+    type: 3}

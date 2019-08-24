@@ -13,11 +13,15 @@ public class DirectSpell : Spell
 
     public override void Initialize(GameObject obj)
     {
-        throw new System.NotImplementedException();
+        source = obj;
     }
 
     public override void TriggerAbility()
     {
-        throw new System.NotImplementedException();
+        List<ITargetable> targets = targetingSystem.GetTargets(source);
+        foreach(ITargetable t in targets)
+        {
+            effect.Apply(t);
+        }
     }
 }
