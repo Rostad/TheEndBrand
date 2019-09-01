@@ -7,6 +7,6 @@ public class Heal : Effect
 {
     public override void Apply(ITargetable target)
     {
-        target.DoHeal(power);
+        //target.DoHeal();
     }
 }

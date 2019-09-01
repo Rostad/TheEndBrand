@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Orbiter : MonoBehaviour, ISpawnableSpell
+public class Orbiter : MonoBehaviour, ISpawnable
 {
 
     private RotateAround[] spheres;

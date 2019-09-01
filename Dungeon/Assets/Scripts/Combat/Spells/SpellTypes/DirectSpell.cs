@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Abilities/DirectSpell")]
 
 public class DirectSpell : Spell
 {
-
-    public ITargeting targetingSystem;
 
 
 
@@ -18,10 +15,13 @@ public class DirectSpell : Spell
 
     public override void TriggerAbility()
     {
-        List<ITargetable> targets = targetingSystem.GetTargets(source);
-        foreach(ITargetable t in targets)
+        foreach(Effect e in effects)
         {
-            effect.Apply(t);
+            List<ITargetable> targets = e.targetingSystem.GetTargets(source);
+            foreach(ITargetable t in targets)
+            {
+                e.Apply(t);
+            }
         }
     }
 }

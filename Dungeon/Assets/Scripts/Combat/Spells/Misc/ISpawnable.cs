@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ISpawnableSpell
+public interface ISpawnable
 {
 
     void SetUp(GameObject caster, Effect effect);

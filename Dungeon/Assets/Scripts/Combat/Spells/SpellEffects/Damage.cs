@@ -6,6 +6,6 @@ public class Damage : Effect
 {
     public override void Apply(ITargetable target)
     {
-        target.DoDamage(power);
+        //target.DoDamage();
     }
 }

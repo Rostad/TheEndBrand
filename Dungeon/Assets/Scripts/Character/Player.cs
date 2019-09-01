@@ -36,11 +36,8 @@ public class Player : MonoBehaviour, IDamagable, ITargetable
         AddInput();
         _ActionState.Update();
         TryAttack();
+        TrySpell();
         UpdateStatusEffects();
-        if (Input.GetKeyDown(KeyCode.H) && _ActionState is NormalState)
-        {
-            SwitchActionState(new CastState(this, spells[1]));
-        }
     }
 
     private void TryAttack()
@@ -63,6 +60,13 @@ public class Player : MonoBehaviour, IDamagable, ITargetable
             }
 
         }
+    }
+
+    private void TrySpell()
+    {
+        if (!(_ActionState is NormalState))
+            return;
+
     }
 
     private void DoAttack(Attack attack)

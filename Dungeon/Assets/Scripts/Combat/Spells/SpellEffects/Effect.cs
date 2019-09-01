@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Effect : ScriptableObject
 {
-    public int power;
+    public ITargeting targetingSystem;
 
     public abstract void Apply(ITargetable target);
 

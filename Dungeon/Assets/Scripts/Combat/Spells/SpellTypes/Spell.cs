@@ -10,10 +10,8 @@ public abstract class Spell : ScriptableObject
     public float coolDown; 
     public string tooltip;
     public int manaCost;
-    public int basePower;
-    public float scaling;
-    public Effect effect;
     public GameObject source;
+    public List<Effect> effects;
     public string castParticles; //Name of particle system to play when spell finishes casting
     public string channelParticles; //Name of particle system to play when spell is casting
 
