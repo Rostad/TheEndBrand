@@ -4903,7 +4903,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88e3ebbb4a6d3a4e8c1f10ce0b66547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sword: {fileID: 6026553845115468037}
+  rightArm: {fileID: 0}
+  leftArm: {fileID: 0}
   leftLeg: {fileID: 0}
   rightLeg: {fileID: 0}
 --- !u!114 &537549793
@@ -5178,12 +5179,6 @@ Transform:
   m_Father: {fileID: 635747272}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!95 &848552192 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6026553844322627189, guid: afee2fb07d5d9614d940e29dd63a7241,
-    type: 3}
-  m_PrefabInstance: {fileID: 6026553845115468031}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &956608230
 GameObject:
   m_ObjectHideFlags: 0
@@ -5215,7 +5210,7 @@ Transform:
   - {fileID: 2725310545642988383}
   - {fileID: 3375554578479802687}
   m_Father: {fileID: 1872764480}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &956608232
 MonoBehaviour:
@@ -38455,7 +38450,7 @@ PrefabInstance:
         type: 3}
       propertyPath: swordHitbox
       value: 
-      objectReference: {fileID: 6026553845115468033}
+      objectReference: {fileID: 0}
     - target: {fileID: 6026553844322627193, guid: afee2fb07d5d9614d940e29dd63a7241,
         type: 3}
       propertyPath: spells.Array.data[0]
@@ -38467,6 +38462,16 @@ PrefabInstance:
       propertyPath: spells.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6026553844322627193, guid: afee2fb07d5d9614d940e29dd63a7241,
+        type: 3}
+      propertyPath: moveListPath
+      value: Movelists/MeleeMoveList
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026553844322627193, guid: afee2fb07d5d9614d940e29dd63a7241,
+        type: 3}
+      propertyPath: moveMetaListPath
+      value: Movelists/MeleeMetaList
+      objectReference: {fileID: 0}
     - target: {fileID: 6026553844275708938, guid: afee2fb07d5d9614d940e29dd63a7241,
         type: 3}
       propertyPath: m_ApplyRootMotion
@@ -38476,7 +38481,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerAnim
       value: 
-      objectReference: {fileID: 848552192}
+      objectReference: {fileID: 0}
     - target: {fileID: 6026553844141192733, guid: afee2fb07d5d9614d940e29dd63a7241,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -38484,25 +38489,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 0fccb3a6942b1c04d9bf2465a0f0d4b6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afee2fb07d5d9614d940e29dd63a7241, type: 3}
---- !u!1 &6026553845115468032 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6026553844143384741, guid: afee2fb07d5d9614d940e29dd63a7241,
-    type: 3}
-  m_PrefabInstance: {fileID: 6026553845115468031}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &6026553845115468033
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6026553845115468032}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.51, y: 0.54, z: 2.1512344}
-  m_Center: {x: -0.17600772, y: -0.07600089, z: 1.2599455}
 --- !u!1 &6026553845115468034 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6026553844322627194, guid: afee2fb07d5d9614d940e29dd63a7241,
@@ -38519,18 +38505,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c99f41d36fce4544b8675a216e92e66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6026553845115468037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6026553845115468032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab6d7a29e7840134ebe6c14858f79744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &6026553845115468044
@@ -39472,7 +39446,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 1
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -39525,7 +39499,7 @@ ParticleSystem:
         m_RotationOrder: 4
     z:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 1
       scalar: 1
       minScalar: 1
       maxCurve:

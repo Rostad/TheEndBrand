@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MoveMetaCollection>
+  <Metas>
+    <Meta name ="Straight Left">
+      <FollowupAttack>Right Straight</FollowupAttack>
+    </Meta>
+    <Meta name ="Chest Crusher">
+      <FollowupAttack>Right Haymaker</FollowupAttack>
+    </Meta>
+    <Meta name ="Gut Destroyer"></Meta>
+    <Meta name ="Left Uppercut"></Meta>
+    <Meta name ="Hellfire Left"></Meta>
+    <Meta name ="Right Haymaker"></Meta>
+    <Meta name ="Right Straight"></Meta>
+  </Metas>
+</MoveMetaCollection>

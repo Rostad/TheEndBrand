@@ -24,9 +24,9 @@ public class AttackState : IActionState
         if (_NextAttack == null)
         {
             _Player.ClearBuffer();
-            _Player.CanMove(true);
-            _Player.DisableRootMotion();
         }
+        _Player.CanMove(true);
+        _Player.DisableRootMotion();
     }
 
     public void Update()
@@ -44,7 +44,7 @@ public class AttackState : IActionState
     {
         _Player = p;
         _CurrentAttack = a;
-        _Duration = time * 0.8f; //Currently works as all attack animations are about the same length, need to figure out how to use crossfades without getting different animation time length
+        _Duration = time * 0.8f;
         _Timer = 0f;
     }
 

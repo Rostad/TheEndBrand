@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class HitboxDriver : MonoBehaviour
 {
-
-    public Hitbox sword;
+    public Hitbox rightArm;
+    public Hitbox leftArm;
     public Hitbox leftLeg;
     public Hitbox rightLeg;
 
@@ -13,8 +13,11 @@ public class HitboxDriver : MonoBehaviour
     {
         switch (name)
         {
-            case "Sword":
-                sword.EnableHitBox();
+            case "Right arm":
+                rightArm.EnableHitBox();
+                break;
+            case "Left arm":
+                leftArm.EnableHitBox();
                 break;
             case "Left leg":
                 leftLeg.EnableHitBox();

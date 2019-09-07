@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MoveCollection>
+  <Moves>
+    <Move name ="Hellfire Left">
+      <Button>Punch</Button>
+      <Input>Forward</Input>
+      <Effect>Knockdown</Effect>
+      <Counter>Knockdown</Counter>
+      <Damage>20</Damage>
+    </Move>
+    <Move name ="Straight Left">
+      <Button>Punch</Button>
+      <Input>Neutral</Input>
+      <Effect>None</Effect>
+      <Counter>None</Counter>
+      <Damage>13</Damage>
+    </Move>
+    <Move name ="Gut Destroyer">
+      <Button>Kick</Button>
+      <Input>Back</Input>
+      <Effect>None</Effect>
+      <Counter>Stun</Counter>
+      <Damage>17</Damage>
+    </Move>
+    <Move name ="Left Uppercut">
+      <Button>Punch</Button>
+      <Input>Back</Input>
+      <Effect>Knockback</Effect>
+      <Counter>Knockup</Counter>
+      <Damage>14</Damage>
+    </Move>
+    <Move name ="Chest Crusher">
+      <Button>Kick</Button>
+      <Input>Neutral</Input>
+      <Effect>None</Effect>
+      <Counter>None</Counter>
+      <Damage>27</Damage>
+    </Move>
+    <Move name ="Right Haymaker">
+      <Button>Punch</Button>
+      <Input>Neutral</Input>
+      <Effect>Knockdown</Effect>
+      <Counter>Knockdown</Counter>
+      <Damage>13</Damage>
+    </Move>
+    <Move name ="Right Straight">
+      <Button>Punch</Button>
+      <Input>None</Input>
+      <Effect>None</Effect>
+      <Counter>None</Counter>
+      <Damage>13</Damage>
+    </Move>
+  </Moves>  
+</MoveCollection>
