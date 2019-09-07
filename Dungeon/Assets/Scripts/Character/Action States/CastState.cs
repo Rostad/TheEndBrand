@@ -12,6 +12,7 @@ public class CastState : IActionState
 
     public void Enter()
     {
+        _Player.GetComponentInChildren<DummyAnimationController>().PlayCast();
         _Player.CanMove(false);
         _Player.PlayParticles(_CurrentSpell.channelParticles);
     }

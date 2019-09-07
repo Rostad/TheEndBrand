@@ -38460,14 +38460,13 @@ PrefabInstance:
         type: 3}
       propertyPath: spells.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 7d75e69a1a7446643830074be78eac83,
+      objectReference: {fileID: 11400000, guid: ef9e6b8ea904be94fb4fbb3b799e71db,
         type: 2}
     - target: {fileID: 6026553844322627193, guid: afee2fb07d5d9614d940e29dd63a7241,
         type: 3}
       propertyPath: spells.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 80215f5fff208284194d02c228c05f5a,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6026553844275708938, guid: afee2fb07d5d9614d940e29dd63a7241,
         type: 3}
       propertyPath: m_ApplyRootMotion
@@ -38623,7 +38622,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 1
+  moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
   randomSeed: 0
@@ -40445,7 +40444,7 @@ ParticleSystem:
     inWorldSpace: 1
   InheritVelocityModule:
     enabled: 0
-    m_Mode: 0
+    m_Mode: 1
     m_Curve:
       serializedVersion: 2
       minMaxState: 0
@@ -43137,7 +43136,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 1
+  moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
   randomSeed: 0
@@ -44959,7 +44958,7 @@ ParticleSystem:
     inWorldSpace: 1
   InheritVelocityModule:
     enabled: 0
-    m_Mode: 0
+    m_Mode: 1
     m_Curve:
       serializedVersion: 2
       minMaxState: 0

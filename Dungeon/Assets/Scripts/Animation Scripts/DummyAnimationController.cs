@@ -43,12 +43,12 @@ public class DummyAnimationController : MonoBehaviour
         {
             ResetRotation();
         }
+    }
 
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            _Animator.ResetTrigger("Cast trigger");
-            _Animator.SetTrigger("Cast trigger");
-        }
+    public void PlayCast()
+    {
+        _Animator.ResetTrigger("Cast trigger");
+        _Animator.SetTrigger("Cast trigger");
     }
 
 

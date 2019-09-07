@@ -2,18 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileSpell : Spell
+[CreateAssetMenu(menuName = "Spells/SpellInstance")]
+public class SpellInstance : Spell
 {
 
-    public Rigidbody projectile;
+
 
     public override void Initialize(GameObject obj)
     {
-        throw new System.NotImplementedException();
+        source = obj;
     }
 
     public override void TriggerAbility()
     {
-        throw new System.NotImplementedException();
+        foreach(Effect e in effects)
+        {
+            e.Perform(source);
+        }
     }
 }

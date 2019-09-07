@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour, IDamagable, ITargetable
+public class Player : MonoBehaviour, ITargetable
 {
 
     public string moveListPath;
@@ -20,6 +20,7 @@ public class Player : MonoBehaviour, IDamagable, ITargetable
     private Hitbox _Weapon;
     private List<StatusEffect> _StatusEffects;
     private ParticleDriver particleDriver;
+    private KeyCode[] abilityKeys = new KeyCode[] { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5 };
 
     // Start is called before the first frame update
     void Start()
@@ -66,7 +67,35 @@ public class Player : MonoBehaviour, IDamagable, ITargetable
     {
         if (!(_ActionState is NormalState))
             return;
+        Spell s = GetSpell();
+        if (s == null)
+            return;
+        CastSpell(s);
 
+
+
+    }
+
+    private Spell GetSpell()
+    {
+        for(int i = 0; i < abilityKeys.Length; i++)
+        {
+            if (Input.GetKeyDown(abilityKeys[i]))
+            {
+                if (!(spells[i] == null))
+                    return spells[i];
+                
+            }
+                
+        }
+
+
+        return null;
+    }
+
+    private void CastSpell(Spell s)
+    {
+        SwitchActionState(new CastState(this, s));
     }
 
     private void DoAttack(Attack attack)
@@ -168,11 +197,6 @@ public class Player : MonoBehaviour, IDamagable, ITargetable
         _Weapon.SetAttackData(attack.damage, attack.attackEffect, attack.counterEffect);
     }
 
-    public HitData DoDamage(AttackData attack)
-    {
-        throw new System.NotImplementedException();
-    }
-
     public void OnHit(HitData hitData)
     {
         Debug.Log(hitData.targetHit + " " + hitData.damage);
@@ -185,22 +209,22 @@ public class Player : MonoBehaviour, IDamagable, ITargetable
         return true;
     }
 
-    public float DoDamage(int amount)
+    public void DoDamage(int amount)
+    {
+        Debug.Log("Something did " + amount + " damage");
+    }
+
+    public void DoHeal(int amount)
+    {
+        Debug.Log("Something restored " + amount + " health");
+    }
+
+    public void DoManaDamage(int amount)
     {
         throw new System.NotImplementedException();
     }
 
-    public float DoHeal(int amount)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public float DoManaDamage(int amount)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public float DoManaRestore(int amount)
+    public void DoManaRestore(int amount)
     {
         throw new System.NotImplementedException();
     }
