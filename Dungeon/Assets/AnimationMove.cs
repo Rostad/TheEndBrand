@@ -15,12 +15,6 @@ public class AnimationMove : MonoBehaviour
         _Anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnAnimatorMove()
     {
         _Controller.Move(_Anim.deltaPosition);

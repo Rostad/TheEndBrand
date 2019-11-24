@@ -10,7 +10,6 @@ public class AttackState : IActionState
     private Attack _NextAttack;
     private float _Duration;
     private float _Timer;
-    private float _AttackRotationSpeed = 2f;
 
     public void Enter()
     {
@@ -44,6 +43,13 @@ public class AttackState : IActionState
     {
         _Player = p;
         _CurrentAttack = a;
+        _Duration = time * 0.8f;
+        _Timer = 0f;
+    }
+
+    public AttackState(Player p, float time)
+    {
+        _Player = p;
         _Duration = time * 0.8f;
         _Timer = 0f;
     }

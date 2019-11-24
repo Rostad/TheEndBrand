@@ -34,8 +34,10 @@ public struct DodgeState3D : ICharacterState3D
         _DodgeMultiplier = 2.7f;
         _Controller = controller;
         _Velocity = velocity;
-        _Direction = Direction.normalized;
-        _DodgeDuration = 0.35f;
+        //_Direction = Direction.normalized;
+        _Direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
+        _Direction.Normalize();
+        _DodgeDuration = 0.5f;
         _Timer = 0;
         _Enter = true;
 
@@ -58,8 +60,7 @@ public struct DodgeState3D : ICharacterState3D
 
     public void Update(Vector3 movementInput, float deltaTime)
     {
-        
-        /*if (Input.GetKeyDown(KeyCode.Space))
+       /*if (Input.GetKeyDown(KeyCode.Space))
         {
             var stateSwitch = new CharacterStateSwitch3D(new AirState3D(_Controller, _Velocity, 3f), movementInput, deltaTime, true);
             _Controller.ChangeCharacterState(stateSwitch);

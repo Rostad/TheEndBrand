@@ -54,6 +54,7 @@ public class DummyAnimationController : MonoBehaviour
 
     public void PlayRoll()
     {
+
         _isRolling = true;
         Vector3 velocity = _Velocity.GetVelocity();
         velocity.y = 0f;
@@ -61,13 +62,13 @@ public class DummyAnimationController : MonoBehaviour
         Vector3 dir = Vector3.RotateTowards(transform.InverseTransformDirection(this.transform.forward), velocity, 360f, 0.0f);
         transform.rotation = Quaternion.LookRotation(dir);
         //_Animator.SetTrigger("Roll trigger");
-        _Animator.CrossFade("Forward Roll", 0.3f);
+        _Animator.Play("Forward Roll", 0);
     }
 
     public void PlayAttack(string name)
     {
         //_Animator.Play(name, 0);
-        _Animator.CrossFadeInFixedTime(name, 0.2f);
+        _Animator.CrossFadeInFixedTime(name, 0.1f);
     }
 
     //Called in the IEnumerator ChangeToAttackState when switching to an attack state. The float returned specifies the length of the attack animation and determines how long the attack state lasts.

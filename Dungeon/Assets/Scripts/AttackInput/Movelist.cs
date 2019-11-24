@@ -132,9 +132,4 @@ public class Movelist{
             d.Add(a.GetInput(), a);
         }
     }
-
-    public void Initialize()
-    {
-
-    }
 }

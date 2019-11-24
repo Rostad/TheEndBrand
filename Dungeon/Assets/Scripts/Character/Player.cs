@@ -7,6 +7,7 @@ public class Player : MonoBehaviour, ITargetable
 
     public string moveListPath;
     public string moveMetaListPath;
+    public ComboAttackGenerator attackGenerator;
 
     private Controller3D _Controller;
     private InputBuffer _Buffer;
@@ -32,7 +33,8 @@ public class Player : MonoBehaviour, ITargetable
 
         AddInput();
         _ActionState.Update();
-        TryAttack();
+        //TryAttack();
+        TryComboAttack();
         UpdateStatusEffects();
     }
 
@@ -58,9 +60,27 @@ public class Player : MonoBehaviour, ITargetable
         }
     }
 
+    private void TryComboAttack()
+    {
+        if(_ActionState is AttackState || _ActionState is NormalState && _Controller.CanAttack)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                var cattack = attackGenerator.GetAttack();
+                DoAttack(cattack);
+            }
+        }
+    }
+
     private void DoAttack(Attack attack)
     {
         _DummyAnim.PlayAttack(attack.name);
+        StartCoroutine(ChangeToAttackState(attack));
+    }
+
+    private void DoAttack(ComboAttack attack)
+    {
+        _DummyAnim.PlayAttack(attack.clip);
         StartCoroutine(ChangeToAttackState(attack));
     }
 
@@ -89,6 +109,13 @@ public class Player : MonoBehaviour, ITargetable
     {
         yield return new WaitForEndOfFrame();
         SwitchActionState(new AttackState(this, a, _DummyAnim.GetAnimationClipLength(a.name)));
+        _DummyAnim.EnableRootMotion();
+    }
+
+    IEnumerator ChangeToAttackState(ComboAttack a)
+    {
+        yield return new WaitForEndOfFrame();
+        SwitchActionState(new AttackState(this, _DummyAnim.GetAnimationClipLength(a.clip)));
         _DummyAnim.EnableRootMotion();
     }
 
