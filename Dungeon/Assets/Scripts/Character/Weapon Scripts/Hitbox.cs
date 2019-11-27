@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider))]
 public class Hitbox : MonoBehaviour
 {
 
@@ -24,6 +25,12 @@ public class Hitbox : MonoBehaviour
     public void SetAttackData(int damage, AttackEffect effect, AttackEffect counterEffect)
     {
         _AttackData = new AttackData(damage, effect, counterEffect);
+        _TargetsHit.Clear();
+    }
+
+    public void SetAttackData(int damage)
+    {
+        SetAttackData(damage, AttackEffect.None, AttackEffect.None);
         _TargetsHit.Clear();
     }
 

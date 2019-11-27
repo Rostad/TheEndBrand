@@ -8,13 +8,15 @@ public class AttackState : IActionState
     private Player _Player;
     private Attack _CurrentAttack;
     private Attack _NextAttack;
+    private int _Damage;
     private float _Duration;
     private float _Timer;
 
     public void Enter()
     {
         _Player.CanMove(false);
-        _Player.SetWeaponAttack(_CurrentAttack);
+        //_Player.SetWeaponAttack(_CurrentAttack);
+        _Player.SetWeaponAttack(_Damage);
     }
 
     public void Exit()
@@ -47,11 +49,12 @@ public class AttackState : IActionState
         _Timer = 0f;
     }
 
-    public AttackState(Player p, float time)
+    public AttackState(Player p, int damage, float time)
     {
         _Player = p;
         _Duration = time * 0.8f;
         _Timer = 0f;
+        _Damage = damage;
     }
 
     public void TrySetFollowup(AttackInput input)

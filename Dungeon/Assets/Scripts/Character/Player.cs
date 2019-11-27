@@ -35,6 +35,7 @@ public class Player : MonoBehaviour, ITargetable
         _ActionState.Update();
         //TryAttack();
         TryComboAttack();
+        CheckControllerStatus();
         UpdateStatusEffects();
     }
 
@@ -62,13 +63,21 @@ public class Player : MonoBehaviour, ITargetable
 
     private void TryComboAttack()
     {
-        if(_ActionState is AttackState || _ActionState is NormalState && _Controller.CanAttack)
+        if((_ActionState is AttackState || _ActionState is NormalState) && _Controller.CanAttack)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 var cattack = attackGenerator.GetAttack();
                 DoAttack(cattack);
             }
+        }
+    }
+
+    private void CheckControllerStatus()
+    {
+        if(_ActionState is AttackState && !_Controller.CanAttack)
+        {
+            SwitchActionState(new NormalState());
         }
     }
 
@@ -115,7 +124,7 @@ public class Player : MonoBehaviour, ITargetable
     IEnumerator ChangeToAttackState(ComboAttack a)
     {
         yield return new WaitForEndOfFrame();
-        SwitchActionState(new AttackState(this, _DummyAnim.GetAnimationClipLength(a.clip)));
+        SwitchActionState(new AttackState(this, a.damage, _DummyAnim.GetAnimationClipLength(a.clip)));
         _DummyAnim.EnableRootMotion();
     }
 
@@ -138,9 +147,11 @@ public class Player : MonoBehaviour, ITargetable
 
     public void SwitchActionState(IActionState state)
     {
+        Debug.Log("Exited " + _ActionState);
         _ActionState.Exit();
         _ActionState = state;
         _ActionState.Enter();
+        Debug.Log("Entered " + _ActionState);
     }
 
     public void SetInitialActionState()
@@ -177,6 +188,11 @@ public class Player : MonoBehaviour, ITargetable
     public void SetWeaponAttack(Attack attack)
     {
         //_Weapon.SetAttackData(attack.damage, attack.attackEffect, attack.counterEffect);
+    }
+
+    public void SetWeaponAttack(int damage)
+    {
+        _Weapon.SetAttackData(damage);
     }
 
     public void OnHit(HitData hitData)
