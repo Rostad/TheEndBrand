@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 7b5b17e2d42e0424f9c36012595dc9b6
 ModelImporter:
-  serializedVersion: 25
+  serializedVersion: 26
   internalIDToNameTable:
   - first:
       1: 100000
@@ -772,14 +772,6 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.5785828
-        functionName: DoFollowUp
-        data: Reverse Rising Slash
-        objectReferenceParameter: {fileID: 11500000, guid: 481c6040ae9602f4b9745a9a9e17a613,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
       - time: 0.34231457
         functionName: EnableHitbox
         data: Sword
@@ -799,6 +791,7 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 0
     importCameras: 0

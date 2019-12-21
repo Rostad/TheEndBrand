@@ -17,6 +17,7 @@ public class AnimationMove : MonoBehaviour
 
     private void OnAnimatorMove()
     {
-        _Controller.Move(_Anim.deltaPosition);
+        if(!_Anim.GetCurrentAnimatorStateInfo(0).IsName("Forward roll"))
+            _Controller.Move(_Anim.deltaPosition);
     }
 }

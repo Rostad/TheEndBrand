@@ -10,8 +10,8 @@ public class InputBuffer {
     public void Initialize()
     {
         _ButtonBuffer = new Queue<AttackInput>();
-        _KickButton = KeyCode.Mouse1;
-        _PunchButton = KeyCode.Mouse0;
+        _KickButton = KeyCode.JoystickButton7;
+        _PunchButton = KeyCode.JoystickButton5;
     }
 
     public void TryAdd(Vector3 Dir)

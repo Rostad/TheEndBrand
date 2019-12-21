@@ -11,6 +11,7 @@ public class AttackState : IActionState
     private int _Damage;
     private float _Duration;
     private float _Timer;
+    private float _DurationFraction = 0.5f; 
 
     public void Enter()
     {
@@ -45,14 +46,14 @@ public class AttackState : IActionState
     {
         _Player = p;
         _CurrentAttack = a;
-        _Duration = time * 0.8f;
+        _Duration = time * _DurationFraction;
         _Timer = 0f;
     }
 
     public AttackState(Player p, int damage, float time)
     {
         _Player = p;
-        _Duration = time * 0.8f;
+        _Duration = time * _DurationFraction;
         _Timer = 0f;
         _Damage = damage;
     }

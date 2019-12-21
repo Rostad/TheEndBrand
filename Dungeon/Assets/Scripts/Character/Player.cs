@@ -18,6 +18,8 @@ public class Player : MonoBehaviour, ITargetable
     private Hitbox _Weapon;
     private List<StatusEffect> _StatusEffects;
     private ParticleDriver particleDriver;
+    private float _TimeOfTriedAttack = -99;
+    private float _AttackBufferThreshhold = 0.4f;
 
     // Start is called before the first frame update
     void Start()
@@ -33,8 +35,8 @@ public class Player : MonoBehaviour, ITargetable
 
         AddInput();
         _ActionState.Update();
-        //TryAttack();
-        TryComboAttack();
+        TryAttack();
+        //TryComboAttack();
         CheckControllerStatus();
         UpdateStatusEffects();
     }
@@ -65,11 +67,14 @@ public class Player : MonoBehaviour, ITargetable
     {
         if((_ActionState is AttackState || _ActionState is NormalState) && _Controller.CanAttack)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) || Time.time <= _TimeOfTriedAttack + _AttackBufferThreshhold)
             {
                 var cattack = attackGenerator.GetAttack();
                 DoAttack(cattack);
             }
+        } else if (Input.GetMouseButtonDown(0))
+        {
+            _TimeOfTriedAttack = Time.time;
         }
     }
 
@@ -147,11 +152,9 @@ public class Player : MonoBehaviour, ITargetable
 
     public void SwitchActionState(IActionState state)
     {
-        Debug.Log("Exited " + _ActionState);
         _ActionState.Exit();
         _ActionState = state;
         _ActionState.Enter();
-        Debug.Log("Entered " + _ActionState);
     }
 
     public void SetInitialActionState()
@@ -161,7 +164,8 @@ public class Player : MonoBehaviour, ITargetable
 
     private void AddInput()
     {
-        var v = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
+        var v = new Vector3(Input.GetAxisRaw("RightStickX"), 0.0f, Input.GetAxisRaw("RightStickY"));
+        Debug.Log(v);
         _Buffer.TryAdd(v);
     }
 

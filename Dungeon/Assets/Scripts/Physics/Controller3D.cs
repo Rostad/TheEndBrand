@@ -164,7 +164,7 @@ public class Controller3D : MonoBehaviour {
 
     public void RotateCharacter(float deltaTime)
     {
-        var x = Input.GetAxisRaw("Mouse X");
+        var x = Input.GetAxis("DPadX");
         if(Mathf.Abs(x) > Mathf.Epsilon)
            transform.RotateAround(transform.position, transform.up, (x * RotationSpeed) * deltaTime);
 
@@ -176,7 +176,7 @@ public class Controller3D : MonoBehaviour {
         if (!canMove)
             return Vector3.zero;
 
-        var v = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
+        var v = new Vector3(0.0f, 0.0f, Input.GetAxisRaw("DPadY"));
         return v;
     }
 
