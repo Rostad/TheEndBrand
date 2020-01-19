@@ -48,7 +48,7 @@ public class RunState3D : ICharacterState3D
             var stateSwitch = new CharacterStateSwitch3D(new DodgeState3D(_Controller, _Velocity, movementInput));
             _Controller.ChangeCharacterState(stateSwitch);
         }
-        if (!Input.GetKey(KeyCode.LeftShift) || movementInput.z < 0.9f) {
+        if (!Input.GetKey(KeyCode.JoystickButton0) || movementInput.z < 0.9f) {
 
             var stateSwitch = new CharacterStateSwitch3D(new GroundState3D(_Controller, _Velocity, true), movementInput, deltaTime, true);
             _Controller.ChangeCharacterState(stateSwitch);

@@ -69,7 +69,7 @@ public struct GroundState3D : ICharacterState3D {
             var stateSwitch = new CharacterStateSwitch3D(new DodgeState3D(controller, velocity, movementInput));
             controller.ChangeCharacterState(stateSwitch);
         }
-        else if (Input.GetKey(KeyCode.LeftShift) && movementInput.z > 0.9)
+        else if (Input.GetKey(KeyCode.JoystickButton0) && movementInput.z > 0.9)
         {
             var stateSwitch = new CharacterStateSwitch3D(new RunState3D(controller, velocity));
             controller.ChangeCharacterState(stateSwitch);

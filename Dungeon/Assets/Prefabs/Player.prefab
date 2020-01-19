@@ -119,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveListPath: Movelists/TwoHanderMoveList
   moveMetaListPath: Movelists/TwoHanderMetaList
+  attackGenerator: {fileID: 0}
 --- !u!114 &6026553844322627188
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,13 +2,13 @@
 <MoveCollection>
   <Moves>
     <!--
-    <Move name ="Horizontal Slash">
+    <Move name ="Crashing Chop">
       <Button>Punch</Button>
       <Input>Neutral</Input>
       <Damage>20</Damage>
     </Move>
     -->
-    <Move name ="Crashing Chop">
+    <Move name ="Down Strike">
       <Button>Punch</Button>
       <Input>Forward</Input>
       <Effect>Knockdown</Effect>

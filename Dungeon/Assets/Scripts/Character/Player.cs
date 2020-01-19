@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour, ITargetable
+public class Player : MonoBehaviour
 {
 
     public string moveListPath;
     public string moveMetaListPath;
     public ComboAttackGenerator attackGenerator;
+
 
     private Controller3D _Controller;
     private InputBuffer _Buffer;
@@ -16,7 +17,6 @@ public class Player : MonoBehaviour, ITargetable
     private Movelist _MoveList;
     private Health _Health;
     private Hitbox _Weapon;
-    private List<StatusEffect> _StatusEffects;
     private ParticleDriver particleDriver;
     private float _TimeOfTriedAttack = -99;
     private float _AttackBufferThreshhold = 0.4f;
@@ -25,7 +25,6 @@ public class Player : MonoBehaviour, ITargetable
     void Start()
     {
         _DummyAnim.DisableRootMotion();
-        _StatusEffects = new List<StatusEffect>();
         particleDriver = GetComponent<ParticleDriver>();
     }
 
@@ -38,7 +37,6 @@ public class Player : MonoBehaviour, ITargetable
         TryAttack();
         //TryComboAttack();
         CheckControllerStatus();
-        UpdateStatusEffects();
     }
 
     private void TryAttack()
@@ -111,14 +109,6 @@ public class Player : MonoBehaviour, ITargetable
         }
     }
 
-    private void UpdateStatusEffects()
-    {
-        foreach (StatusEffect e in _StatusEffects)
-        {
-            e.Update();
-        }
-    }
-
     IEnumerator ChangeToAttackState(Attack a)
     {
         yield return new WaitForEndOfFrame();
@@ -165,7 +155,6 @@ public class Player : MonoBehaviour, ITargetable
     private void AddInput()
     {
         var v = new Vector3(Input.GetAxisRaw("RightStickX"), 0.0f, Input.GetAxisRaw("RightStickY"));
-        Debug.Log(v);
         _Buffer.TryAdd(v);
     }
 
@@ -202,13 +191,6 @@ public class Player : MonoBehaviour, ITargetable
     public void OnHit(HitData hitData)
     {
         Debug.Log(hitData.targetHit + " " + hitData.damage);
-    }
-
-    public bool ApplyStatus(StatusEffect effect)
-    {
-        effect.OnApply();
-        _StatusEffects.Add(effect);
-        return true;
     }
 
     public void DoDamage(int amount)

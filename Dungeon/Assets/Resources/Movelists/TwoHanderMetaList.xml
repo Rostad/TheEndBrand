@@ -5,9 +5,9 @@
       <FollowupAttack>Reverse Rising Slash</FollowupAttack>
     </Meta>
     
-    <Meta name ="Crashing Chop"></Meta>
+    <Meta name ="Down Strike"></Meta>
     <!--
-    <Meta name ="Horizontal Slash"></Meta>
+    <Meta name ="Crashing Chop"></Meta>
     -->
     <Meta name ="Side Kick"></Meta>
     <Meta name="Rising Slash"></Meta>
