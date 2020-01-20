@@ -1,13 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!-- This xml file lists the possible attacks the player can use.The list states what the attacks do on a normal hit, a counter hit (an opponent being struck doing something gets counter hit),
+     damage and what inputs are used to perform it.
+     
+     Attacks are defined as
+     
+     <Move name = "move name">
+       <Button>button</Button>        Possible buttons are Punch and Kick, select the button which is appropriate.
+       <Input>direction</Input>       Possible directions are None, Forward, Back, Left and Right
+       <Effect>normal</Effect>           
+       <Counter>counter</Counter>
+       <Damage>number</Damage>
+     
+     Each attack needs to have a responding xml element in the list corresponding metalist.
+     
+     When making changes make sure to check that no moves are overlapping.     
+     
+-->
 <MoveCollection>
   <Moves>
-    <!--
-    <Move name ="Crashing Chop">
-      <Button>Punch</Button>
-      <Input>Neutral</Input>
-      <Damage>20</Damage>
-    </Move>
-    -->
     <Move name ="Down Strike">
       <Button>Punch</Button>
       <Input>Forward</Input>
@@ -17,9 +28,9 @@
     </Move>
     <Move name ="Rising Slash">
       <Button>Punch</Button>
+      <Input>Back</Input>
       <Effect>Knockup</Effect>
       <Counter>Knockup</Counter>
-      <Input>Back</Input>
       <Damage>17</Damage>
     </Move>
     <Move name ="Side Kick">
@@ -41,6 +52,22 @@
       <Input>Neutral</Input>
       <Effect>Knockback</Effect>
       <Effect>Knockback</Effect>
+      <Damage>20</Damage>
+    </Move>
+    <!--
+    <Move name ="Horizontal Slash">
+      <Button>Punch</Button>
+      <Input>Neutral</Input>
+      <Effect>None</Effect>
+      <Effect>None</Effect>
+      <Damage>20</Damage>
+    </Move>
+    -->
+    <Move name ="Crashing Chop">
+      <Button>Punch</Button>
+      <Input>Neutral</Input>
+      <Effect>Knockdown</Effect>
+      <Counter>Knockdown</Counter>
       <Damage>20</Damage>
     </Move>
   </Moves>  

@@ -1,4 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--This xml file lists additional information about attacks listed in a movelist, currently it only lists which attacks are follow up attacks. 
+    Note that adding a move as a follow up is not enough, you will also need to add an animation event for the corresponding attack for when the follow up attack
+    is supposed to execute
+
+-->
+
 <MoveMetaCollection>
   <Metas>
     <Meta name ="Crashing Slash">
@@ -6,11 +13,14 @@
     </Meta>
     
     <Meta name ="Down Strike"></Meta>
-    <!--
     <Meta name ="Crashing Chop"></Meta>
-    -->
-    <Meta name ="Side Kick"></Meta>
+    <Meta name ="Side Kick">
+      <FollowupAttack>Crashing Chop</FollowupAttack>
+    </Meta>
     <Meta name="Rising Slash"></Meta>
     <Meta name="Reverse Rising Slash"></Meta>
+    <!--
+    <Meta name="Horizontal Slash"></Meta>
+     -->
   </Metas>
 </MoveMetaCollection>
