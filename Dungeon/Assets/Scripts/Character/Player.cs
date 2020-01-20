@@ -55,6 +55,7 @@ public class Player : MonoBehaviour
             {
                 AttackInput input = _Buffer.Dequeue();
                 Attack attack = _MoveList.GetAttack(input);
+                Debug.Log(attack.name + " " + attack.attackButton + " " + attack.inputDir);
                 DoAttack(attack);
             }
 
@@ -154,7 +155,7 @@ public class Player : MonoBehaviour
 
     private void AddInput()
     {
-        var v = new Vector3(Input.GetAxisRaw("RightStickX"), 0.0f, Input.GetAxisRaw("RightStickY"));
+        var v = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
         _Buffer.TryAdd(v);
     }
 

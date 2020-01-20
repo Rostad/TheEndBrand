@@ -64,12 +64,12 @@ public struct GroundState3D : ICharacterState3D {
     public void Update(Vector3 movementInput, float deltaTime)
     {
         Vector3 v = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
-        if (Input.GetKeyDown(KeyCode.Space) && controller.CanDodge && (v.z != 0 || v.x != 0))
+        if (Input.GetKeyDown(KeyCode.JoystickButton2) && controller.CanDodge && (v.z != 0 || v.x != 0))
         {
             var stateSwitch = new CharacterStateSwitch3D(new DodgeState3D(controller, velocity, movementInput));
             controller.ChangeCharacterState(stateSwitch);
         }
-        else if (Input.GetKey(KeyCode.JoystickButton0) && movementInput.z > 0.9)
+        else if (Input.GetKeyDown(KeyCode.JoystickButton10) && movementInput.z > 0.9)
         {
             var stateSwitch = new CharacterStateSwitch3D(new RunState3D(controller, velocity));
             controller.ChangeCharacterState(stateSwitch);

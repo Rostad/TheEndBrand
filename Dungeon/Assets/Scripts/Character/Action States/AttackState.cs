@@ -11,7 +11,7 @@ public class AttackState : IActionState
     private int _Damage;
     private float _Duration;
     private float _Timer;
-    private float _DurationFraction = 0.5f; 
+    private float _DurationFraction = 0.8f; 
 
     public void Enter()
     {

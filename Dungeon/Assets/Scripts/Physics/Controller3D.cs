@@ -113,8 +113,7 @@ public class Controller3D : MonoBehaviour {
         characterState.Update(v, deltaTime);
         HandleCollisions(Move());
         DrawAxes();
-        if (Input.GetKeyDown(KeyCode.G))
-            Debug.Log(canMove);
+        
 	}
 
     
@@ -164,7 +163,7 @@ public class Controller3D : MonoBehaviour {
 
     public void RotateCharacter(float deltaTime)
     {
-        var x = Input.GetAxis("DPadX");
+        var x = Input.GetAxis("RightStickX");
         if(Mathf.Abs(x) > Mathf.Epsilon)
            transform.RotateAround(transform.position, transform.up, (x * RotationSpeed) * deltaTime);
 
@@ -176,7 +175,7 @@ public class Controller3D : MonoBehaviour {
         if (!canMove)
             return Vector3.zero;
 
-        var v = new Vector3(0.0f, 0.0f, Input.GetAxisRaw("DPadY"));
+        var v = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
         return v;
     }
 

@@ -43,12 +43,12 @@ public class RunState3D : ICharacterState3D
 
     public void Update(Vector3 movementInput, float deltaTime)
     {
-        if (Input.GetKeyDown(KeyCode.Space) && _Controller.CanDodge)
+        if (Input.GetKeyDown(KeyCode.JoystickButton2) && _Controller.CanDodge)
         {
             var stateSwitch = new CharacterStateSwitch3D(new DodgeState3D(_Controller, _Velocity, movementInput));
             _Controller.ChangeCharacterState(stateSwitch);
         }
-        if (!Input.GetKey(KeyCode.JoystickButton0) || movementInput.z < 0.9f) {
+        if (Input.GetKeyDown(KeyCode.JoystickButton10) || movementInput.z < 0.9f) {
 
             var stateSwitch = new CharacterStateSwitch3D(new GroundState3D(_Controller, _Velocity, true), movementInput, deltaTime, true);
             _Controller.ChangeCharacterState(stateSwitch);

@@ -31,7 +31,7 @@ public struct DodgeState3D : ICharacterState3D
 
         if (velocity == null)
             throw new ArgumentNullException("velocity");
-        _DodgeMultiplier = 2.7f;
+        _DodgeMultiplier = 2.0f;
         _Controller = controller;
         _Velocity = velocity;
         //_Direction = Direction.normalized;

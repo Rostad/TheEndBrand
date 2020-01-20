@@ -68,7 +68,7 @@ public class DummyAnimationController : MonoBehaviour
     public void PlayAttack(string name)
     {
         //_Animator.Play(name, 0);
-        _Animator.CrossFadeInFixedTime(name, 0.1f);
+        _Animator.CrossFadeInFixedTime(name, 0.2f);
     }
 
     //Called in the IEnumerator ChangeToAttackState when switching to an attack state. The float returned specifies the length of the attack animation and determines how long the attack state lasts.
