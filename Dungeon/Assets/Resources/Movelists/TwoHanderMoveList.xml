@@ -37,7 +37,7 @@
       <Button>Kick</Button>
       <Input>Neutral</Input>
       <Effect>None</Effect>
-      <Counter>Stun</Counter>
+      <Counter>None</Counter>
       <Damage>20</Damage>
     </Move>
     <Move name ="Crashing Slash">

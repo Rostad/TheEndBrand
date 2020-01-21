@@ -55,7 +55,6 @@ public class Player : MonoBehaviour
             {
                 AttackInput input = _Buffer.Dequeue();
                 Attack attack = _MoveList.GetAttack(input);
-                Debug.Log(attack.name + " " + attack.attackButton + " " + attack.inputDir);
                 DoAttack(attack);
             }
 

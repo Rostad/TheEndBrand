@@ -129,7 +129,6 @@ public class Movelist{
 
         foreach(Attack a in attacks)
         {
-            Debug.Log(a.name);
             d.Add(a.GetInput(), a);
         }
     }

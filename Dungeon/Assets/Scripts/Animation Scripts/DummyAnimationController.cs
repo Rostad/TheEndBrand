@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DummyAnimationController : MonoBehaviour
 {
-    public Animator playerAnim;
 
     private Velocity3D _Velocity;
     private Animator _Animator;
@@ -35,7 +34,7 @@ public class DummyAnimationController : MonoBehaviour
         var v = _Velocity.GetVelocity();
         _Animator.SetFloat("Velocity X", v.x);
         _Animator.SetFloat("Velocity Z", v.z);
-        if (_Animator.GetCurrentAnimatorStateInfo(0).IsName("Running") && _Animator.GetFloat("Velocity Z") > 10f)
+        if (_Animator.GetCurrentAnimatorStateInfo(0).IsName("Running") /*&& _Animator.GetFloat("Velocity Z") > 10f*/)
         {
             RunningRotate();
             _wasRunning = true;
@@ -44,13 +43,6 @@ public class DummyAnimationController : MonoBehaviour
             ResetRotation();
         }
     }
-
-    public void PlayCast()
-    {
-        _Animator.ResetTrigger("Cast trigger");
-        _Animator.SetTrigger("Cast trigger");
-    }
-
 
     public void PlayRoll()
     {
