@@ -23,6 +23,11 @@ public class DummyAnimationController : MonoBehaviour
         
     }
 
+    public void SetRunning(bool b)
+    {
+        _Animator.SetBool("Running", b);
+    }
+
     public void ShareVelocity(Velocity3D vel)
     {
         _Velocity = vel;
@@ -34,13 +39,18 @@ public class DummyAnimationController : MonoBehaviour
         var v = _Velocity.GetVelocity();
         _Animator.SetFloat("Velocity X", v.x);
         _Animator.SetFloat("Velocity Z", v.z);
-        if (_Animator.GetCurrentAnimatorStateInfo(0).IsName("Running") /*&& _Animator.GetFloat("Velocity Z") > 10f*/)
-        {
+        /*
+        if (_Animator.GetCurrentAnimatorStateInfo(0).IsName("Running") && _Animator.GetFloat("Velocity Z") > 10f)
+        /*{
             RunningRotate();
             _wasRunning = true;
         } else if (_wasRunning && !_isRolling)
         {
             ResetRotation();
+        }*/
+        if (_Animator.GetBool("Running"))
+        {
+            RunningRotate();
         }
     }
 

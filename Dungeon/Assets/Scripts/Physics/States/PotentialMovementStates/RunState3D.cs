@@ -12,12 +12,13 @@ public class RunState3D : ICharacterState3D
 
     public void Enter()
     {
-
+        GameObject.FindGameObjectWithTag("Character").GetComponent<DummyAnimationController>().SetRunning(true);
     }
 
     public void Exit()
     {
-
+        GameObject.FindGameObjectWithTag("Character").GetComponent<DummyAnimationController>().SetRunning(false);
+        GameObject.FindGameObjectWithTag("Character").GetComponent<DummyAnimationController>().ResetRotation();
     }
 
     public RunState3D(Controller3D controller, Velocity3D velocity)
@@ -48,7 +49,7 @@ public class RunState3D : ICharacterState3D
             var stateSwitch = new CharacterStateSwitch3D(new DodgeState3D(_Controller, _Velocity, movementInput));
             _Controller.ChangeCharacterState(stateSwitch);
         }*/
-        if (Input.GetKeyDown(KeyCode.JoystickButton10) || movementInput.z < 0.9f) {
+        if (Input.GetKeyDown(KeyCode.JoystickButton10) || movementInput.z < 0.8f) {
 
             var stateSwitch = new CharacterStateSwitch3D(new GroundState3D(_Controller, _Velocity, true), movementInput, deltaTime, true);
             _Controller.ChangeCharacterState(stateSwitch);
