@@ -8,8 +8,9 @@ public class Player : MonoBehaviour
     public string moveListPath;
     public string moveMetaListPath;
     public ComboAttackGenerator attackGenerator;
+    public GameObject[] origins;
 
-
+    private Attack _CurrentAttack;
     private Controller3D _Controller;
     private InputBuffer _Buffer;
     private IActionState _ActionState;
@@ -37,6 +38,11 @@ public class Player : MonoBehaviour
         TryAttack();
         //TryComboAttack();
         CheckControllerStatus();
+    }
+
+    public void SetCurrentAttack(Attack a)
+    {
+        _CurrentAttack = a;
     }
 
     private void TryAttack()
@@ -123,9 +129,22 @@ public class Player : MonoBehaviour
         _DummyAnim.EnableRootMotion();
     }
 
+    public void DoHit(string[] origins)
+    {
+        if(_ActionState is IActionState)
+        {
+            foreach(string s in origins)
+            {
+                Debug.Log(s);
+            }
+            
+        }
+    }
+
 
     private void Awake()
     {
+
         CacheComponents();
         SetInitialActionState();
     }

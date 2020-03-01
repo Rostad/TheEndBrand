@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 69f3b1b43eb337548a8633b7b82d6fc6
 ModelImporter:
-  serializedVersion: 25
+  serializedVersion: 26
   internalIDToNameTable:
   - first:
       1: 100000
@@ -411,10 +411,11 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.39904273
-        functionName: Hit
-        data: 
-        objectReferenceParameter: {instanceID: 0}
+      - time: 0.4204713
+        functionName: DoHit
+        data: LeftHand
+        objectReferenceParameter: {fileID: 11500000, guid: f88e3ebbb4a6d3a4e8c1f10ce0b66547,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
@@ -539,6 +540,7 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 0
     importCameras: 0

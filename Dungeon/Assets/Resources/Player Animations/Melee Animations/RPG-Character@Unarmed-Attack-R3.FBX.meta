@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 3414c515c6a2f334da03b4ab3d547691
 ModelImporter:
-  serializedVersion: 25
+  serializedVersion: 26
   internalIDToNameTable:
   - first:
       1: 100000
@@ -410,10 +410,11 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.43291605
-        functionName: Hit
+      - time: 0.44363034
+        functionName: EnableHitbox
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: f88e3ebbb4a6d3a4e8c1f10ce0b66547,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
@@ -538,6 +539,7 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 0
     importCameras: 0

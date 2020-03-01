@@ -6,8 +6,22 @@ public class HitboxDriver : MonoBehaviour
 {
     public Hitbox sword;
 
+    private Player player;
+
     public void EnableHitbox()
     {
+        Debug.Log(Time.time + " hit");
         sword.EnableHitBox();
+    }
+
+    public void DoHit(string origins)
+    {
+        string[] originsSplit = origins.Split( ',');
+        player.DoHit(originsSplit);
+    }
+
+    private void Start()
+    {
+        player = GetComponentInParent<Player>();
     }
 }

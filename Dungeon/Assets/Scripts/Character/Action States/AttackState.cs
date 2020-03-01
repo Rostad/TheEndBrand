@@ -15,9 +15,10 @@ public class AttackState : IActionState
 
     public void Enter()
     {
+        _Player.SetCurrentAttack(_CurrentAttack);
         _Player.CanMove(false);
         //_Player.SetWeaponAttack(_CurrentAttack);
-        _Player.SetWeaponAttack(_Damage);
+        //_Player.SetWeaponAttack(_Damage);
     }
 
     public void Exit()
