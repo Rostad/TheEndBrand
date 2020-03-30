@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDamagable
 {
 
     public string moveListPath;
@@ -40,11 +41,6 @@ public class Player : MonoBehaviour
         CheckControllerStatus();
     }
 
-    public void SetCurrentAttack(Attack a)
-    {
-        _CurrentAttack = a;
-    }
-
     private void TryAttack()
     {
         if (_ActionState is AttackState)
@@ -80,6 +76,21 @@ public class Player : MonoBehaviour
         {
             _TimeOfTriedAttack = Time.time;
         }
+    }
+
+    void OnDrawGizmos()
+    {
+        /*Gizmos.DrawWireCube(origins[0].transform.position, origins[0].transform.localScale);
+        Gizmos.DrawWireCube(origins[1].transform.position, origins[1].transform.localScale);
+        Gizmos.DrawWireCube(origins[2].transform.position, origins[2].transform.localScale);
+        Gizmos.DrawWireCube(origins[3].transform.position, origins[3].transform.localScale);
+        Gizmos.DrawWireCube(origins[4].transform.position, origins[4].transform.localScale);
+        Gizmos.DrawWireCube(origins[5].transform.position, origins[5].transform.localScale);*/
+    }
+
+    public void SetCurrentAttack(Attack attack)
+    {
+        _CurrentAttack = attack;
     }
 
     private void CheckControllerStatus()
@@ -129,15 +140,16 @@ public class Player : MonoBehaviour
         _DummyAnim.EnableRootMotion();
     }
 
-    public void DoHit(string[] origins)
+    public void DoHit(string[] limbs)
     {
-        if(_ActionState is IActionState)
+        AttackState attackState = _ActionState as AttackState;
+
+        foreach(GameObject g in origins)
         {
-            foreach(string s in origins)
+            if (limbs.Contains(g.name))
             {
-                Debug.Log(s);
+                attackState.PerformCast(g);
             }
-            
         }
     }
 
@@ -212,9 +224,10 @@ public class Player : MonoBehaviour
         Debug.Log(hitData.targetHit + " " + hitData.damage);
     }
 
-    public void DoDamage(int amount)
+    public HitData DoDamage(AttackData attack)
     {
-        Debug.Log("Something did " + amount + " damage");
+        Debug.Log("Something did " + attack.damage + " damage");
+        return new HitData(this.name, attack.damage, attack.attackEffect);
     }
 
     public void DoHeal(int amount)

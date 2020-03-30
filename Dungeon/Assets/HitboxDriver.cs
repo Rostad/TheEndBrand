@@ -10,7 +10,6 @@ public class HitboxDriver : MonoBehaviour
 
     public void EnableHitbox()
     {
-        Debug.Log(Time.time + " hit");
         sword.EnableHitBox();
     }
 

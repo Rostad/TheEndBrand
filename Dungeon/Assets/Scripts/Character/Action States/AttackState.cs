@@ -11,7 +11,9 @@ public class AttackState : IActionState
     private int _Damage;
     private float _Duration;
     private float _Timer;
-    private float _DurationFraction = 0.8f; 
+    private float _DurationFraction = 0.8f;
+    private List<GameObject> targetsHit;
+
 
     public void Enter()
     {
@@ -43,12 +45,26 @@ public class AttackState : IActionState
         
     }
 
+    public void PerformCast(GameObject origin)
+    {
+        Debug.Log("Casted a hitbox from " + origin.name);
+        RaycastHit hit;
+        //Physics.BoxCast(origin.transform.position, new Vector3(1,1,1), origin.transform.forward, out hit, origin.transform.localRotation, 2.5f);
+        Collider[] collisions = Physics.OverlapBox(origin.transform.position, new Vector3(0.5f, 0.5f, 0.5f), origin.transform.localRotation);
+        foreach(Collider c in collisions)
+        {
+            Debug.Log(c.name);
+        }
+      
+    }
+
     public AttackState(Player p, Attack a, float time)
     {
         _Player = p;
         _CurrentAttack = a;
         _Duration = time * _DurationFraction;
         _Timer = 0f;
+        targetsHit = new List<GameObject>();
     }
 
     public AttackState(Player p, int damage, float time)

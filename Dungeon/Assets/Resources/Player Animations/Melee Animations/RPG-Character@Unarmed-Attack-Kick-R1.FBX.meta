@@ -415,7 +415,7 @@ ModelImporter:
       events:
       - time: 0.46474358
         functionName: DoHit
-        data: RightCalf, RightFoot
+        data: RightCalf,RightFoot
         objectReferenceParameter: {fileID: 11500000, guid: f88e3ebbb4a6d3a4e8c1f10ce0b66547,
           type: 3}
         floatParameter: 0
