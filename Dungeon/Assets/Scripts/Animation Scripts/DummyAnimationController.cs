@@ -39,19 +39,22 @@ public class DummyAnimationController : MonoBehaviour
         var v = _Velocity.GetVelocity();
         _Animator.SetFloat("Velocity X", v.x);
         _Animator.SetFloat("Velocity Z", v.z);
-        /*
+        
         if (_Animator.GetCurrentAnimatorStateInfo(0).IsName("Running") && _Animator.GetFloat("Velocity Z") > 10f)
-        /*{
+        {
             RunningRotate();
             _wasRunning = true;
+            return;
         } else if (_wasRunning && !_isRolling)
         {
-            ResetRotation();
-        }*/
-        if (_Animator.GetBool("Running"))
+            //ResetRotation();
+        }
+
+        RunToGroundRotation();
+        /*if (_Animator.GetBool("Running"))
         {
             RunningRotate();
-        }
+        }*/
     }
 
     public void PlayRoll()
@@ -95,7 +98,7 @@ public class DummyAnimationController : MonoBehaviour
         Vector3 velocity = _Velocity.GetVelocity();
         velocity.y = 0f;
         velocity = _Player.transform.TransformVector(velocity);
-        Vector3 dir = Vector3.RotateTowards(transform.forward, velocity, 360f, 0.0f);
+        Vector3 dir = Vector3.RotateTowards(transform.forward, velocity, 5 * Time.deltaTime, 0.0f);
         transform.rotation = Quaternion.LookRotation(dir);
     }
 
@@ -107,6 +110,12 @@ public class DummyAnimationController : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(dir);
         _wasRunning = false;
         _isRolling = false;
+    }
+
+    public void RunToGroundRotation()
+    {
+        Vector3 dir = Vector3.RotateTowards(transform.forward, transform.parent.transform.forward, 5 * Time.deltaTime, 0.0f);
+        transform.rotation = Quaternion.LookRotation(dir);
     }
 
     public void DisableRootMotion()

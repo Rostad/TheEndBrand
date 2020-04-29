@@ -163,7 +163,7 @@ public class Controller3D : MonoBehaviour {
 
     public void RotateCharacter(float deltaTime)
     {
-        var x = Input.GetAxis("RightStickX");
+        var x = Input.GetAxis("Mouse X");
         if(Mathf.Abs(x) > Mathf.Epsilon)
            transform.RotateAround(transform.position, transform.up, (x * RotationSpeed) * deltaTime);
 
