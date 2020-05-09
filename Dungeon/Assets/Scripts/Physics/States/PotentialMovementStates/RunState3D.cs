@@ -12,12 +12,12 @@ public class RunState3D : ICharacterState3D
 
     public void Enter()
     {
-        GameObject.FindGameObjectWithTag("Character").GetComponent<DummyAnimationController>().SetRunning(true);
+        //GameObject.FindGameObjectWithTag("Character").GetComponent<DummyAnimationController>().SetRunning(true);
     }
 
     public void Exit()
     {
-        GameObject.FindGameObjectWithTag("Character").GetComponent<DummyAnimationController>().SetRunning(false);
+        //GameObject.FindGameObjectWithTag("Character").GetComponent<DummyAnimationController>().SetRunning(false);
         //GameObject.FindGameObjectWithTag("Character").GetComponent<DummyAnimationController>().ResetRotation();
     }
 

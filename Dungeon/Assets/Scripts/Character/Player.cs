@@ -15,7 +15,7 @@ public class Player : MonoBehaviour, IDamagable
     private Controller3D _Controller;
     private InputBuffer _Buffer;
     private IActionState _ActionState;
-    private DummyAnimationController _DummyAnim;
+    private PlayerAnimationController _PlayerAnimController;
     private Movelist _MoveList;
     private Health _Health;
     private Hitbox _Weapon;
@@ -26,7 +26,7 @@ public class Player : MonoBehaviour, IDamagable
     // Start is called before the first frame update
     void Start()
     {
-        _DummyAnim.DisableRootMotion();
+        _PlayerAnimController.DisableRootMotion();
         particleDriver = GetComponent<ParticleDriver>();
     }
 
@@ -103,13 +103,13 @@ public class Player : MonoBehaviour, IDamagable
 
     private void DoAttack(Attack attack)
     {
-        _DummyAnim.PlayAttack(attack.name);
+        _PlayerAnimController.PlayAttack(attack.name);
         StartCoroutine(ChangeToAttackState(attack));
     }
 
     private void DoAttack(ComboAttack attack)
     {
-        _DummyAnim.PlayAttack(attack.clip);
+        _PlayerAnimController.PlayAttack(attack.clip);
         StartCoroutine(ChangeToAttackState(attack));
     }
 
@@ -129,15 +129,15 @@ public class Player : MonoBehaviour, IDamagable
     IEnumerator ChangeToAttackState(Attack a)
     {
         yield return new WaitForEndOfFrame();
-        SwitchActionState(new AttackState(this, a, _DummyAnim.GetAnimationClipLength(a.name)));
-        _DummyAnim.EnableRootMotion();
+        SwitchActionState(new AttackState(this, a, _PlayerAnimController.GetAnimationClipLength(a.name)));
+        _PlayerAnimController.EnableRootMotion();
     }
 
     IEnumerator ChangeToAttackState(ComboAttack a)
     {
         yield return new WaitForEndOfFrame();
-        SwitchActionState(new AttackState(this, a.damage, _DummyAnim.GetAnimationClipLength(a.clip)));
-        _DummyAnim.EnableRootMotion();
+        SwitchActionState(new AttackState(this, a.damage, _PlayerAnimController.GetAnimationClipLength(a.clip)));
+        _PlayerAnimController.EnableRootMotion();
     }
 
     public void DoHit(string[] limbs)
@@ -166,7 +166,7 @@ public class Player : MonoBehaviour, IDamagable
         _Controller = GetComponent<Controller3D>();
         _Buffer = new InputBuffer();
         _Buffer.Initialize();
-        _DummyAnim = GetComponentInChildren<DummyAnimationController>();
+        _PlayerAnimController = GetComponentInChildren<PlayerAnimationController>();
         _MoveList = Movelist.BuildMoveList(moveListPath, moveMetaListPath);
         _Weapon = GetComponentInChildren<Hitbox>();
     }
@@ -206,7 +206,7 @@ public class Player : MonoBehaviour, IDamagable
 
     public void DisableRootMotion()
     {
-        _DummyAnim.DisableRootMotion();
+        _PlayerAnimController.DisableRootMotion();
     }
 
     public void SetWeaponAttack(Attack attack)

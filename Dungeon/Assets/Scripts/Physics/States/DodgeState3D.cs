@@ -11,7 +11,6 @@ public struct DodgeState3D : ICharacterState3D
     private float _DodgeMultiplier;
     private float _DodgeDuration;
     private float _Timer;
-    private bool _Enter;
 
     public void Enter()
     {
@@ -20,7 +19,7 @@ public struct DodgeState3D : ICharacterState3D
 
     public void Exit()
     {
-        GameObject.FindGameObjectWithTag("Character").GetComponent<DummyAnimationController>().ResetRotation();
+        //GameObject.FindGameObjectWithTag("Character").GetComponent<DummyAnimationController>().ResetRotation();
         _Controller.timeOfLastDodge = Time.time;
     }
 
@@ -39,7 +38,6 @@ public struct DodgeState3D : ICharacterState3D
         _Direction.Normalize();
         _DodgeDuration = 0.5f;
         _Timer = 0;
-        _Enter = true;
 
     }
 
@@ -74,11 +72,6 @@ public struct DodgeState3D : ICharacterState3D
         {
             UpdateVelocity(deltaTime);
             _Timer += deltaTime;
-            if (_Enter)
-            {
-                GameObject.FindGameObjectWithTag("Character").GetComponent<DummyAnimationController>().PlayRoll();
-                _Enter = false;
-            }
         }
     } 
 

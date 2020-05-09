@@ -44,6 +44,8 @@ public class Controller3D : MonoBehaviour {
 
     private ICharacterState3D characterState;
 
+    private PlayerAnimationController playerAnimationController;
+
     public bool canMove;
 
     public float MaxJumpVelocity { get; private set; }
@@ -80,8 +82,10 @@ public class Controller3D : MonoBehaviour {
     {
         PrintStateSwitch(stateSwitch);
         characterState.Exit();
+        playerAnimationController.PlayStateSwitchAnimation(characterState.GetType().Name, stateSwitch.NewState.GetType().Name);
         characterState = stateSwitch.NewState;
         characterState.Enter();
+
         if (stateSwitch.RunImmediately)
             characterState.Update(stateSwitch.MovementInput, stateSwitch.DeltaTime);
     }
@@ -121,6 +125,7 @@ public class Controller3D : MonoBehaviour {
     private void CacheComponents()
     {
         characterController = GetComponent<CharacterController>();
+        playerAnimationController = GetComponentInChildren<PlayerAnimationController>();
         
     }
 
@@ -139,7 +144,7 @@ public class Controller3D : MonoBehaviour {
     private void CreateVelocity()
     {
         velocity = new Velocity3D(-TerminalVelocity);
-        GetComponentInChildren<DummyAnimationController>().ShareVelocity(velocity);
+        GetComponentInChildren<PlayerAnimationController>().ShareVelocity(velocity);
     }
 
     private void SetInitialCharacterState()

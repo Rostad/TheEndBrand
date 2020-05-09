@@ -1,0 +1,33 @@
+{
+    "name": "PlayerInputs",
+    "maps": [
+        {
+            "name": "PlayerInputs",
+            "id": "c8dd6b5b-894f-4c7c-823d-b5ac33673769",
+            "actions": [
+                {
+                    "name": "DodgeAction",
+                    "type": "Button",
+                    "id": "e6bf70b9-be99-47da-9317-c69542c59fd4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "22413eec-a239-49f6-86a8-cc7d6bd27359",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DodgeAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
